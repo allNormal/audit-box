@@ -1,0 +1,40 @@
+#compareTitle {
+  margin: 25px 135px;
+  grid-template-columns: 400px 100px 400px;
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 25px;
+}
+
+.textEditor {
+  color: #fff;
+}
+
+#backButton {
+  margin-top: 50px;
+  margin-bottom: 0px;
+  margin-right: 135px;
+  margin-left: 135px;
+  font-size: 20px;
+}
+
+
+#compareBody {
+  margin: 50px 135px;
+  grid-template-columns: 400px 100px 400px;
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 25px;
+}
+
+#resultCard {
+  grid-template-columns: 400px 50px 400px;
+  display: grid;
+  grid-column-gap: 50px;
+  height: 550px;
+}
+
+.compareItem {
+  height: 500px;
+  overflow: auto;
+}

@@ -1,0 +1,50 @@
+#searchContainer {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.textEditor {
+  color: #fff;
+}
+
+.searchBar {
+  margin-right: 5px;
+}
+
+
+.form-control:focus {
+  border-color: white;
+  box-shadow: 2px 2px 5px black;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #006699;
+}
+
+#searchBar {
+  margin: 10px 10px;
+  width: 480px;
+}
+
+#searchContent {
+  background-color: #006699;
+}
+
+.listItem {
+  cursor: pointer;
+}
+
+.listItem:active {
+  text-decoration: underline;
+  text-underline: black;
+}
+
+#searchList {
+  columns: 3;
+  column-gap: 140px;
+  margin: auto 10px;
+}

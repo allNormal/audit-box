@@ -1,0 +1,57 @@
+<div *ngIf="!finishLoading else cardData">
+  <div class="spinner-border"></div>
+</div>
+
+<ng-template #cardData>
+  <div id="cardResultContainer">
+    <div class="card cardResult" style="overflow: auto" (click)="openForm(provenance)" *ngFor="let provenance of this.provenances.provenanceList">
+      <div class="card-header text-center textEditor font-weight-bold" style="background: #006699; font-size: 1.1rem">
+        {{provenance.execution_time}}
+      </div>
+      <div *ngFor="let entity of this.provenance.entities">
+        <ul class="list-group list-group-flush listOverflow" *ngIf="entity.name === 'DockerImage'">
+          <li class="list-group-item font-weight-bold" *ngFor="let value of entity.values | keyvalue">{{value.key}}: {{value.value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+<!-- The Modal -->
+<div id="cardModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="background: #006699">
+    <span class="close" (click)="closeForm();" style="cursor: pointer">&times;</span>
+      <fieldset>
+        <legend class="text-center textEditor font-weight-bold" style="width: 500px; word-wrap: break-word">
+          {{this.provenanceClicked.execution_time}}
+        </legend>
+
+        <div class="card" style="height: 400px">
+          <ul class="list-group list-group-flush" style="overflow: auto">
+            <div *ngFor="let entity of provenanceClicked.entities" style="margin-bottom: 5px; margin-left: 2px">
+              <h3 class="font-weight-bold">{{entity.name}}</h3>
+              <li class="list-group-item font-weight-bold" *ngFor="let value of entity.values | keyvalue">
+                {{value.key}}: {{value.value}}
+              </li>
+            </div>
+            <div *ngFor="let agent of provenanceClicked.agents" style="margin-bottom: 5px">
+              <h3 class="font-weight-bold">{{agent.name}}</h3>
+              <li class="list-group-item font-weight-bold" *ngFor="let value of agent.values | keyvalue">
+                {{value.key}}: {{value.value}}
+              </li>
+            </div>
+            <div *ngFor="let activity of provenanceClicked.activities" style="margin-bottom: 5px">
+              <h3 class="font-weight-bold">{{activity.name}}</h3>
+              <li class="list-group-item font-weight-bold" *ngFor="let value of activity.values | keyvalue">
+                {{value.key}}: {{value.value}}
+              </li>
+            </div>
+          </ul>
+        </div>
+        <a (click)="compare()" class="pull-right textEditor font-weight-bold" style="margin-top: 5px; cursor:pointer;">Compare -></a>
+      </fieldset>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div id="backButton">
+  <a (click)="backToMainPage()" style="cursor: pointer" class="font-weight-bold"><-- Back</a>
+</div>
+
+<div id="compareContainer">
+  <div id="compareTitle">
+    <div class="form-group">
+      <label for="compareItem1"></label>
+      <select class="form-control" id="compareItem1" (change)="changeProvenence1(t1.value)" #t1>
+        <option [value]="provenence.execution_time" [selected]="provenence.execution_time === provenance1.execution_time" *ngFor="let provenence of provenanceList | async">{{provenence.execution_time}}</option>
+      </select>
+    </div>
+
+    <button (click)="checkingDiff()" type="button" class="btn btn-primary" style="width: 100px; height: 38px; margin: auto">
+      <div *ngIf="notCalculated else loading">Diff</div>
+      <ng-template #loading>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </ng-template>
+    </button>
+
+
+    <div class="form-group">
+      <label for="compareItem2"></label>
+      <select class="form-control" id="compareItem2" (change)="changeProvenence2(t.value)" #t>
+        <option *ngFor="let provenence of provenanceList | async" [value]="provenence.execution_time">{{provenence.execution_time}}</option>
+      </select>
+    </div>
+  </div>
+  <div id="compareBody">
+    <div class="compareItem">
+      <div id="compareCard">
+        <div class="card">
+          <div class="card-header text-center textEditor font-weight-bold" style="background: #006699">
+            {{provenance1.execution_time}}
+          </div>
+          <div *ngFor="let entity of this.provenance1.entities">
+            <hr style="margin-top: 0">
+            <h4 class="font-weight-bold">{{entity.name}}</h4>
+            <hr style="margin-bottom: 0">
+            <ul class="list-group list-group-flush listOverflow">
+              <li class="list-group-item font-weight-bold" *ngFor="let value of entity.values | keyvalue" id="provenence1{{entity.name}}{{value.key}}">{{value.key}}: {{value.value}}</li>
+            </ul>
+          </div>
+          <div *ngFor="let agent of this.provenance1.agents">
+            <hr style="margin-top: 0">
+            <h4 class="font-weight-bold">{{agent.name}}</h4>
+            <hr style="margin-bottom: 0">
+            <ul class="list-group list-group-flush listOverflow">
+              <li class="list-group-item font-weight-bold" *ngFor="let value of agent.values | keyvalue" id="provenence1{{agent.name}}{{value.key}}">{{value.key}}: {{value.value}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="compareItem">
+      <div class="compareCard">
+        <div class="card" style="overflow: auto">
+          <div class="card-header text-center textEditor font-weight-bold" style="background: #006699">
+            {{provenance2.execution_time}}
+          </div>
+          <div *ngFor="let entity of this.provenance2.entities">
+            <hr style="margin-top: 0">
+            <h4 class="font-weight-bold">{{entity.name}}</h4>
+            <hr style="margin-bottom: 0">
+            <ul class="list-group list-group-flush listOverflow">
+              <li class="list-group-item font-weight-bold" id="provenence2{{entity.name}}{{value.key}}" *ngFor="let value of entity.values | keyvalue">{{value.key}}: {{value.value}}</li>
+            </ul>
+          </div>
+
+          <div *ngFor="let agent of this.provenance2.agents">
+            <hr style="margin-top: 0">
+            <h4>{{agent.name}}</h4>
+            <hr style="margin-bottom: 0">
+            <ul class="list-group list-group-flush listOverflow">
+              <li class="list-group-item font-weight-bold" id="provenence2{{agent.name}}{{value.key}}" *ngFor="let value of agent.values | keyvalue">{{value.key}}: {{value.value}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="font-weight-bold text-center">RESULT</h1>
+
+  <div class="card" style="margin: 50px 135px;">
+    <div class="card-body" id="resultCard">
+      <div class="card border-light mb-3" style="height: 500px; overflow: auto">
+        <div class="card-header font-weight-bold textEditor text-center" style="background: #006699;">
+          {{provenance1.execution_time}} <span class="badge bg-danger font-weight-bold">{{this.compareMessage.length}}</span>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush listOverflow">
+            <li class="list-group-item font-weight-bold" *ngFor="let errorMessage of compareMessage; index as i">{{i+1}}. {{errorMessage}}</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-right: 3px solid #006699; height: 500px; margin: auto; margin-top: 0">
+
+      </div>
+      <div class="card border-light mb-3" style="height: 500px; overflow: auto">
+        <div class="card-header font-weight-bold textEditor text-center" style="background: #006699">
+          {{provenance2.execution_time}} <span class="badge bg-danger font-weight-bold">{{this.compareMessage2.length}}</span>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush listOverflow">
+            <li class="list-group-item font-weight-bold" *ngFor="let errorMessage2 of compareMessage2; index as i">{{i+1}}. {{errorMessage2}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
