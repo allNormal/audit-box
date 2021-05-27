@@ -1,0 +1,144 @@
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:     <http://semweb.mmlab.be/ns/ql#> .
+@prefix carml:  <http://carml.taxonic.com/carml/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix : <http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox#> .
+@prefix ex: <http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Shacl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+ex:EntityConstraint a sh:NodeShape ;
+                        sh:targetClass prov:Entity ;
+                        sh:property [
+                                         sh:path :airportName ;
+                                         sh:datatype xsd:string ;
+                                         sh:message "every airportName should be a string" ;
+                                     ] ;
+                        sh:property [
+                                        sh:path :uuid ;
+                                        sh:datatype xsd:string ;
+                                        sh:message "every uuid should be a string";
+                                     ];
+                        sh:property [
+                                        sh:path :image_id;
+                                        sh:datatype xsd:string;
+                                        sh:message "every image_id should be a string";
+                                     ];
+                        sh:property [
+                                        sh:path :imageVersion;
+                                        sh:datatype xsd:string;
+                                        sh:message "every image version should be a string";
+                                     ];
+                        sh:property [
+                                        sh:path :gitCommitNumber;
+                                        sh:datatype xsd:integer;
+                                        sh:message "every git commit number should be an integer"
+                                     ];
+                        sh:property [
+                                        sh:path :gitDescription;
+                                        sh:datatype xsd:string;
+                                        sh:message "every git description should be a string";
+                                     ];
+                        sh:property [
+                                        sh:path :pipfreeze;
+                                        sh:datatype xsd:string;
+                                        sh:message "every pip freeze should be a string";
+                                    ];
+                        sh:property [
+                                        sh:path :hash;
+                                        sh:datatype xsd:string;
+                                        sh:message "every hash should be a string";
+                                    ];
+                        sh:property [
+                                        sh:path :transform;
+                                        sh:class prov:Activity;
+                                        sh:message "transform should connect to an activity";
+                                    ];
+.
+
+ex:ActivityConstraint a sh:NodeShape;
+                      sh:targetClass prov:Activity;
+
+                      sh:property[
+                                     sh:path :uuid;
+                                     sh:datatype xsd:string;
+                                     sh:message "every uuid should be a string";
+                                 ];
+
+                      sh:property[
+                                     sh:path prov:startedAtTime;
+                                     sh:datatype xsd:datetime;
+                                     sh:message "every date should be a datetime";
+                                 ];
+
+                      sh:property[
+                                     sh:path :basedOfSnapshotFrom;
+                                     sh:class prov:Entity;
+                                     sh:message "based of snapshot should only linked to the docker image entity";
+                                 ];
+
+
+                      sh:property[
+                                     sh:path prov:endedAtTime;
+                                     sh:datatype xsd:datetime;
+                                     sh:message "every date should be a datetime";
+                                 ];
+
+                      sh:property[
+                                     sh:path :response;
+                                     sh:class prov:Entity;
+                                     sh:message "response linked to the website raw data entity";
+                                 ];
+
+                      sh:property[
+                                     sh:path :transform;
+                                     sh:class prov:Entity;
+                                     sh:message "transform linked to the website json entity";
+                                 ];
+.
+
+ex:AgentConstraint a sh:NodeShape;
+                      sh:targetClass prov:Agent;
+
+                      sh:property[
+                                     sh:path :uuid;
+                                     sh:datatype xsd:string;
+                                     sh:message "every uuid should be a string";
+                                 ];
+
+                      sh:property[
+                                     sh:path :runtimeEnv;
+                                     sh:class prov:Activity;
+                                     sh:message "runtime environment should linked to the run activity";
+                                 ];
+
+                      sh:property[
+                                     sh:path :contain;
+                                     sh:class prov:Agent;
+                                     sh:message "contain should linked to the jupyter notebook agent";
+                                 ];
+
+
+                      sh:property[
+                                     sh:path :hash;
+                                     sh:datatype xsd:string;
+                                     sh:message "every hash should be a string";
+                                 ];
+
+                      sh:property[
+                                     sh:path :sendRequest;
+                                     sh:class prov:Activity;
+                                     sh:message "send request should linked to the website raw activity";
+                                 ];
+
+                      sh:property[
+                                     sh:path :transformFunction;
+                                     sh:class prov:Activity;
+                                     sh:message "transform function should linked to the transforming activity";
+                                 ];
+.

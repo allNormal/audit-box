@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.semsys</groupId>
+    <artifactId>audit-box</artifactId>
+    <version>0.2.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <carml.version>0.3.1</carml.version>
+        <jena.version>3.17.0</jena.version>
+        <jena.schemagen.version>3.6.0</jena.schemagen.version>
+        <junit.version>4.13.1</junit.version>
+        <common-cli.version>1.4</common-cli.version>
+        <json.version>20201115</json.version>
+        <sparkjava.version>2.9.3</sparkjava.version>
+        <shacl.version>1.3.2</shacl.version>
+        <owlapi.version>5.1.17</owlapi.version>
+        <hermit.version>1.4.5.519</hermit.version>
+        <snake.version>1.25</snake.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- CARML library -->
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml</artifactId>
+            <version>${carml.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-rdf-mapper</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-model</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-velocity</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-commons</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openrdf.sesame/sesame-repository-dataset -->
+        <dependency>
+            <groupId>org.openrdf.sesame</groupId>
+            <artifactId>sesame-repository-dataset</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-engine</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-logical-source-resolver-csv</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-logical-source-resolver-jsonpath</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-logical-source-resolver-xpath</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taxonic.carml</groupId>
+            <artifactId>carml-logical-source-resolver</artifactId>
+            <version>${carml.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>${common-cli.version}</version>
+        </dependency>
+
+        <!-- JSON library -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+        <!-- rest service -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>${sparkjava.version}</version>
+        </dependency>
+
+        <!-- junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <!-- SHACL -->
+        <dependency>
+            <groupId>org.topbraid</groupId>
+            <artifactId>shacl</artifactId>
+            <version>${shacl.version}</version>
+        </dependency>
+
+        <!-- OWL-API -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-api</artifactId>
+            <version>${owlapi.version}</version>
+        </dependency>
+
+        <!-- HERMIT Reasoner -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>org.semanticweb.hermit</artifactId>
+            <version>${hermit.version}</version>
+        </dependency>
+
+        <!--https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snake.version}</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse.rdf4j/rdf4j-repository-manager -->
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-repository-manager</artifactId>
+            <version>3.6.0-M2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

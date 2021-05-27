@@ -1,0 +1,286 @@
+@prefix : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox> .
+
+<http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#basedOfSnapshotFrom
+:basedOfSnapshotFrom rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#contain
+:contain rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#response
+:response rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#runTimeEnvironment
+:runTimeEnvironment rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#sendRequest
+:sendRequest rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#sendResponse
+:sendResponse rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#sent
+:sent rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#transform
+:transform rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#transformFunction
+:transformFunction rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#transformedData
+:transformedData rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#use
+:use rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#executionDate
+:executionDate rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#gitCommitNumber
+:gitCommitNumber rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#gitDescription
+:gitDescription rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hash
+:hash rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#name
+:name rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#pipFreeze
+:pipFreeze rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#requestEnd
+:requestEnd rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#requestStart
+:requestStart rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#uuid
+:uuid rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSON
+:AirportJSON rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hash ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :name ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :uuid ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAW
+:AirportRAW rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hash ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :name ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :uuid ;
+                              owl:allValuesFrom xsd:string
+                            ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerContainer
+:DockerContainer rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :contain ;
+                                   owl:allValuesFrom :JNB
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :runTimeEnvironment ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Run
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hash ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :uuid ;
+                                   owl:allValuesFrom xsd:string
+                                 ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerImage
+:DockerImage rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :gitCommitNumber ;
+                               owl:allValuesFrom xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :gitDescription ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hash ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :pipFreeze ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#GetWebsiteRAW
+:GetWebsiteRAW rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :response ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :AirportRAW
+                               ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#JNB
+:JNB rdf:type owl:Class ;
+     rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :use ;
+                       owl:someValuesFrom :Libraries
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :sendRequest ;
+                       owl:allValuesFrom :GetWebsiteRAW
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :transformFunction ;
+                       owl:allValuesFrom :TransformToJSON
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hash ;
+                       owl:allValuesFrom xsd:string
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :name ;
+                       owl:allValuesFrom xsd:string
+                     ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Libraries
+:Libraries rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hash ;
+                             owl:allValuesFrom xsd:string
+                           ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Library
+:Library rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :partOf ;
+                           owl:allValuesFrom :Libraries
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hash ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :name ;
+                           owl:allValuesFrom xsd:string
+                         ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDB
+:MongoDB rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :sendResponse ;
+                           owl:allValuesFrom :GetWebsiteRAW
+                         ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Run
+:Run rdf:type owl:Class ;
+     rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :basedOfSnapshotFrom ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :DockerImage
+                     ] .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#TransformToJSON
+:TransformToJSON rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :transformedData ;
+                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :AirportJSON
+                                 ] .
+
+
+###  http://www.w3.org/ns/prov#Acitivity
+<http://www.w3.org/ns/prov#Acitivity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

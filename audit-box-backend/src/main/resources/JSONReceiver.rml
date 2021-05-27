@@ -1,0 +1,376 @@
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:     <http://semweb.mmlab.be/ns/ql#> .
+@prefix carml:  <http://carml.taxonic.com/carml/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#> .
+@base <http://example.org/default#> .
+
+<#DockerImage>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                            rml:referenceFormulation ql:JSONPath ;
+                            rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/DockerImage-{initializationHash}" ;
+                            rr:class    prov:Entity ] ;
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :gitCommitNumber ;
+                                rr:objectMap [ rml:reference "gitCommitNumber" ;
+                                               rr:datatype   xsd:integer ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :gitDescription ;
+                                    rr:objectMap [ rml:reference "gitDescription" ;
+                                                   rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :pipfreeze ;
+                                    rr:objectMap [ rml:reference "pipFreeze" ;
+                                                   rr:datatype   xsd:string ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "DockerImage"] ];
+.
+
+
+<#runActivity>
+
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                            rml:referenceFormulation ql:JSONPath ;
+                            rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/Run-{uuid}" ;
+                            rr:class    prov:Activity ] ;
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                          rr:objectMap [ rml:reference "uuid" ;
+                            rr:datatype   xsd:string ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate prov:startedAtTime ;
+                            rr:objectMap [ rml:reference "executionDate" ;
+                                           rr:datatype   xsd:datetime ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :basedOfSnapshotFrom ;
+                            rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/DockerImage-{initializationHash}"; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "Run"] ];
+.
+
+<#DockerContainer>
+
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                            rml:referenceFormulation ql:JSONPath ;
+                            rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/DockerContainer-{initializationHash}" ;
+                            rr:class    prov:Agent ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "DockerContainer"] ];
+
+    rr:predicateObjectMap [ rr:predicate :runtimeEnv  ;
+                            rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/Run-{uuid}"; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :contain ;
+                            rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/JNB/{airport.airportName}-{airport.airportJupyterNotebookHash}"; ] ; ] ;
+
+.
+
+<#JNBMapping>
+
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                            rml:referenceFormulation ql:JSONPath ;
+                            rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/JNB/{airport.airportName}-{airport.airportJupyterNotebookHash}" ;
+                            rr:class    prov:Agent ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rml:reference "airport.airportName"] ];
+
+    rr:predicateObjectMap [ rr:predicate :hash ;
+                                        rr:objectMap [ rml:reference "airport.airportJupyterNotebookHash" ;
+                                                       rr:datatype   xsd:string ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :use;
+                            rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/Collection-{pythonLibrariesHash}" ] ];
+
+
+    rr:predicateObjectMap [ rr:predicate :sendRequest;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/getWebsiteRAW-{uuid}"] ];
+
+
+    rr:predicateObjectMap [ rr:predicate :transformFunction;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/transformJSON-{uuid}"] ];
+
+
+    rr:predicateObjectMap [ rr:predicate :sent;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/sendJSON-{uuid}"] ];
+.
+
+
+<#libsCollection>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                            rml:referenceFormulation ql:JSONPath ;
+                            rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/Collection-{pythonLibrariesHash}" ;
+                            rr:class    prov:Collection ] ;
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate prov:hadMember;
+                            rr:objectMap [ rr:parentTriplesMap <#library>;
+                                            rr:joinCondition [
+                                                            rr:child "airport.airportName";
+                                                            rr:parent "airport_name";
+                                                        ] ] ];
+
+.
+
+<#library>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$.pythonLibraries[*]" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/library/{libraryName}-{libraryHash}" ;
+                                rr:class    prov:Entity ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rml:reference "libraryName"] ];
+
+    rr:predicateObjectMap [ rr:predicate :hash ;
+                                        rr:objectMap [ rml:reference "libraryHash" ;
+                                                       rr:datatype   xsd:string ; ] ; ] ;
+
+.
+
+
+<#getWebsiteRaw>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/getWebsiteRAW-{uuid}" ;
+                                rr:class    prov:Activity ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                          rr:objectMap [ rml:reference "uuid" ;
+                            rr:datatype   xsd:string ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate prov:startedAtTime ;
+                                        rr:objectMap [ rml:reference "requestStart" ;
+                                                       rr:datatype   xsd:datetime ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate prov:endedAtTime ;
+                                        rr:objectMap [ rml:reference "requestEnd" ;
+                                                       rr:datatype   xsd:datetime ; ] ; ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :response;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/{airport.airportName}/AirportRAW-{airportRawWebsiteData.airportRawWebsiteHash}"] ];
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "get_website_RAW"] ];
+.
+
+<#AirportRAW>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/{airport.airportName}/AirportRAW-{airportRawWebsiteData.airportRawWebsiteHash}" ;
+                                rr:class    prov:Entity ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :hash ;
+                                        rr:objectMap [ rml:reference "airportRawWebsiteData.airportRawWebsiteHash" ;
+                                                       rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :airportName ;
+                                            rr:objectMap [ rml:reference "airport.airportName" ;
+                                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :transform;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/transformJSON-{uuid}"] ];
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "Airport_RAW"] ];
+.
+
+<#MongoDB>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/MongoDB-{mongo.version}" ;
+                                rr:class    prov:Agent ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :sendRequest;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/getWebsiteRAW-{uuid}"] ];
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "MongoDB"] ];
+.
+
+<#transformToJSON>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/transformJSON-{uuid}" ;
+                                rr:class    prov:Activity ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                          rr:objectMap [ rml:reference "uuid" ;
+                            rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :transform;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/{airport.airportName}/AirportJSON-{airportJsonData.airportJsonHash}"] ];
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "transform_to_JSON"] ];
+.
+
+<#AirportJSON>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/{airport.airportName}/AirportJSON-{airportJsonData.airportJsonHash}" ;
+                                rr:class    prov:Entity ] ;
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :hash ;
+                                        rr:objectMap [ rml:reference "airportJsonData.airportJsonHash" ;
+                                                       rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :airportName ;
+                                            rr:objectMap [ rml:reference "airport.airportName" ;
+                                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :data;
+                                rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/sendJSON-{uuid}"] ];
+
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "Airport_JSON"] ];
+.
+
+<#sendJSON>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/sendJSON-{uuid}" ;
+                                rr:class    prov:Activity ] ;
+
+    rr:predicateObjectMap [ rr:predicate :receive_request;
+                            rr:objectMap [ rr:template  "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/wikibase-{uuid}"] ];
+
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                          rr:objectMap [ rml:reference "uuid" ;
+                            rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "send_JSON"] ];
+.
+
+<#wikibase>
+    a                     rr:TriplesMap;
+
+    rml:logicalSource     [ rml:source               [ a carml:Stream ; ] ;
+                                rml:referenceFormulation ql:JSONPath ;
+                                rml:iterator             "$" ; ];
+
+
+    rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/wikibase-{uuid}" ;
+                                rr:class    prov:Agent ] ;
+
+    rr:predicateObjectMap [ rr:predicate :hash ;
+                                           rr:objectMap [ rml:reference "wikibase.hash" ;
+                                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate rdfs:label;
+                            rr:objectMap [rr:constant "Wikibase"] ];
+.
+

@@ -1,0 +1,29 @@
+# service port
+auditboxPort: 2806
+tempFile: "temp_"
+tempFileSuffix: ".ttl"
+
+# graph db location
+endpoint: "http://localhost:7200/"
+# repository that want to be used
+provRepo: "audit-box"
+
+# rml file for json data
+jsonReceiver: "JSONReceiver.rml"
+
+#shacle shapes
+shapes: "shapes.ttl"
+
+#Provenance ontology
+provenance: "model.ttl"
+
+#Workflow ontology
+workflow:
+
+#logFile properties
+logFile: "log4j.properties"
+
+# default graph name
+defaultGraph: "http://example.org/default"
+consentGraph: "http://example.org/consent"
+rdtGraph: "http://example.org/rdt"

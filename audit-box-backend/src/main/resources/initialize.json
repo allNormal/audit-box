@@ -1,0 +1,22 @@
+{
+  "image_id": "1",
+  "image_version": "2.09",
+  "git_commit_number": "4",
+  "pipfreeze": "packages1,...,packagesN",
+  "jnb": {
+    "name": "Vienna",
+    "hash": "hausshad09u12093i1ß03iaudadyc"
+  },
+  "libraries": [
+    {
+      "name": "library1",
+      "hash": "adosajd0iu102u301u0adj091u2",
+      "jnb_name": "Vienna"
+    },
+    {
+      "name": "library2",
+      "hash": "adosajdsiu102u301u0adj091u2",
+      "jnb_name": "Vienna"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  webapp:
+    volumes:
+      - ../src:/usr/src/myapp
+    build: "../"
+    ports:
+      - 2806:2806
+
+  graphdb:
+    image: ontotext/graphdb:tag
+    volumes:
+      - ../data:/opt/graphdb/home
+      - ../license:data/conf/graphdb.license
+
