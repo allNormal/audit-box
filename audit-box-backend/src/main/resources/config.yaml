@@ -4,7 +4,7 @@ tempFile: "temp_"
 tempFileSuffix: ".ttl"
 
 # graph db location
-endpoint: "http://localhost:7200/"
+endpoint: "http://graphdb:7200/"
 # repository that want to be used
 provRepo: "audit-box"
 

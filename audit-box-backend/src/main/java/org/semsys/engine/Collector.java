@@ -30,7 +30,7 @@ public class Collector {
 
     private EndpointV2 endpointV2;
     private static final Logger log = LoggerFactory.getLogger(Collector.class);
-    private static final String FILELOCATION ="src/main/resources/";
+    private static final String FILELOCATION ="/usr/src/myapp/main/resources/";
 
     public Collector(String repoName, String managerAddr) {
         this.endpointV2 = new EndpointV2();

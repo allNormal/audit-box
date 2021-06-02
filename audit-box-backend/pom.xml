@@ -156,6 +156,7 @@
             <version>3.6.0-M2</version>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
         <dependency>
             <groupId>commons-codec</groupId>
@@ -179,5 +180,26 @@
 
 
     </dependencies>
+
+    <build>
+        <plugins><plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                    <configuration>
+                        <classifier>spring-boot</classifier>
+                        <mainClass>
+                            org.semsys.Service
+                        </mainClass>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -5,11 +5,20 @@ services:
       - ../src:/usr/src/myapp
     build: "../"
     ports:
-      - 2806:2806
+      - "2806:2806"
+    depends_on:
+      - graphdb
+    environment:
+      - WAIT_HOSTS=graphdb:7200
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
 
   graphdb:
-    image: ontotext/graphdb:tag
+    image: khaller/graphdb-free:latest
     volumes:
-      - ../data:/opt/graphdb/home
-      - ../license:data/conf/graphdb.license
+      - ../data:/opt/graphdb/data
+      - ../audit-box:/opt/graphdb/data/repositories/audit-box
+    ports:
+      - "7200:7200"
 
