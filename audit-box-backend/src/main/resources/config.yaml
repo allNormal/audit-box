@@ -6,7 +6,7 @@ tempFileSuffix: ".ttl"
 # graph db location
 endpoint: "http://graphdb:7200/"
 # repository that want to be used
-provRepo: "audit-box"
+provRepo: "vasqua"
 
 # rml file for json data
 jsonReceiver: "JSONReceiver.rml"
@@ -24,6 +24,6 @@ workflow:
 logFile: "log4j.properties"
 
 # default graph name
-defaultGraph: "http://example.org/default"
+defaultGraph: "http://vasqua.org/provenance"
 consentGraph: "http://example.org/consent"
 rdtGraph: "http://example.org/rdt"

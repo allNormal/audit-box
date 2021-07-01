@@ -13,12 +13,20 @@ services:
       - WAIT_HOSTS_TIMEOUT=300
       - WAIT_SLEEP_INTERVAL=30
       - WAIT_HOST_CONNECT_TIMEOUT=30
+    networks:
+      - api_for_data_int_data-int-net
 
   graphdb:
     image: khaller/graphdb-free:latest
     volumes:
       - ../data:/opt/graphdb/data
-      - ../audit-box:/opt/graphdb/data/repositories/audit-box
+      - ../vasqua:/opt/graphdb/data/repositories/vasqua
     ports:
       - "7200:7200"
+    networks:
+      - api_for_data_int_data-int-net
 
+
+networks:
+  api_for_data_int_data-int-net:
+    external: true
