@@ -2,3 +2,7 @@
 http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 http://www.w3.org/2001/XMLSchema#string
 http://www.w3.org/2001/XMLSchema#datetime
+http://www.w3.org/2001/XMLSchema#integer
+http://www.w3.org/2001/XMLSchema#date
+http://www.w3.org/2001/XMLSchema#anyURI
+en

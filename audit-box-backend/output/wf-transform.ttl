@@ -1,0 +1,24 @@
+@prefix : <http://w3id.org/wellfort/ns/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix id: <http://w3id.org/wellfort/id/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+id:transform-6b3a3b69-2356-402c-89d9-43d3f7c6b17c a :Transform, prov:Activity;
+  prov:startedAtTime "2020-12-16T22:29:56.033184+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:endedAtTime "2020-12-16T22:30:04.346708+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:wasAssociatedWith id:script-%2Fusr%2Fsrc%2Fapp%2Fapp%2Fapi.py%3A239;
+  prov:used id:query-result-bc9cd967-eeaf-4b43-a1fe-8389f1a5f780 .
+
+id:study-6b3a3b69-2356-402c-89d9-43d3f7c6b17c a :Study, prov:Collection, prov:Entity;
+  prov:generatedAtTime "2020-12-16T22:30:04.346708+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:hadMember id:transform-result-6b3a3b69-2356-402c-89d9-43d3f7c6b17c .
+
+id:transform-result-6b3a3b69-2356-402c-89d9-43d3f7c6b17c a prov:Entity, :TransformedDataset;
+  prov:wasAttributedTo id:user-f0b471f9-8ace-4622-8dae-646ab52f2f9b;
+  prov:wasGeneratedBy id:transform-6b3a3b69-2356-402c-89d9-43d3f7c6b17c;
+  prov:generatedAtTime "2020-12-16T22:30:04.346708+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime> .
+
+id:script-%2Fusr%2Fsrc%2Fapp%2Fapp%2Fapi.py%3A239 a prov:Agent, :Script;
+  prov:actedOnBehalfOf id:user-f0b471f9-8ace-4622-8dae-646ab52f2f9b .

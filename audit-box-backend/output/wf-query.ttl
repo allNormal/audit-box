@@ -1,0 +1,41 @@
+@prefix : <http://w3id.org/wellfort/ns/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix id: <http://w3id.org/wellfort/id/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+id:query-907989fb-a92e-4118-8dfb-4f0794448165 a :Query, prov:Activity;
+  prov:startedAtTime "2021-01-20T22:28:18.404409+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:endedAtTime "2021-01-20T22:28:18.415631+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:wasAssociatedWith id:script-%2Fusr%2Fsrc%2Fapp%2Fapp%2Fv1%2Fmain%2Fapi.py%3A166;
+  :hasDataHandling id:handling-907989fb-a92e-4118-8dfb-4f0794448165 .
+
+id:query-result-907989fb-a92e-4118-8dfb-4f0794448165 a :QueryResult, prov:Entity,
+    prov:Collection;
+  prov:generatedAtTime "2021-01-20T22:28:18.411596+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:wasGeneratedBy id:query-907989fb-a92e-4118-8dfb-4f0794448165;
+  prov:wasAttributedTo id:user-f0b471f9-8ace-4622-8dae-646ab52f2f9b;
+  prov:hadMember id:dataset-366, id:dataset-433, id:dataset-491, id:dataset-130, id:dataset-191,
+    id:dataset-16, id:dataset-20, id:dataset-68, id:dataset-179 .
+
+id:script-%2Fusr%2Fsrc%2Fapp%2Fapp%2Fv1%2Fmain%2Fapi.py%3A166 a prov:Agent, :Script;
+  prov:actedOnBehalfOf id:user-f0b471f9-8ace-4622-8dae-646ab52f2f9b .
+
+id:dataset-366 a prov:Entity, :InvenioRecord .
+
+id:dataset-433 a prov:Entity, :InvenioRecord .
+
+id:dataset-491 a prov:Entity, :InvenioRecord .
+
+id:dataset-130 a prov:Entity, :InvenioRecord .
+
+id:dataset-191 a prov:Entity, :InvenioRecord .
+
+id:dataset-16 a prov:Entity, :InvenioRecord .
+
+id:dataset-20 a prov:Entity, :InvenioRecord .
+
+id:dataset-68 a prov:Entity, :InvenioRecord .
+
+id:dataset-179 a prov:Entity, :InvenioRecord .

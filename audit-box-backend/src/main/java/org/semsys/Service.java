@@ -94,4 +94,11 @@ public class Service {
         return "{ status: 'query OK' }";
     }
 
+    private void validate() {
+        get("/api/validate", (request, response) -> {
+            log.info("Validating data with uuid " + request.headers());
+            return "hello!";
+        });
+    }
+
 }

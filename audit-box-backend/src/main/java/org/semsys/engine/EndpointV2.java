@@ -107,7 +107,7 @@ public class EndpointV2 {
                     "prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> \n" +
                     "prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
                     "prefix prov:   <http://www.w3.org/ns/prov#> \n" +
-                    "prefix : <http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox#> \n" +
+                    "prefix : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#> \n" +
                     "\n" +
                     "SELECT DISTINCT ?uuid ?label ?gitCommitNumber ?gitDescription ?pipfreeze ?startedAt\n" +
                     "WHERE {\n" +

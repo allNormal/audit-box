@@ -9,13 +9,16 @@ endpoint: "http://graphdb:7200/"
 provRepo: "vasqua"
 
 # rml file for json data
-jsonReceiver: "JSONReceiver.rml"
+jsonReceiver: "JSONReceiverSAO.rml"
 
 #shacle shapes
 shapes: "shapes.ttl"
 
 #Provenance ontology
-provenance: "model.ttl"
+provenance: "vasqua_model.owl"
+
+ep_plan: "ep-plan.ttl"
+sao: "sao.ttl"
 
 #Workflow ontology
 workflow:
@@ -24,6 +27,6 @@ workflow:
 logFile: "log4j.properties"
 
 # default graph name
-defaultGraph: "http://vasqua.org/provenance"
+defaultGraph: "http://vasqua.org/provenance/test"
 consentGraph: "http://example.org/consent"
 rdtGraph: "http://example.org/rdt"

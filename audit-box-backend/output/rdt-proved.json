@@ -1,0 +1,1610 @@
+{
+  "hadMember": {
+    "rdt:m4": {
+      "prov:entity": "rdt:f7",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m3": {
+      "prov:entity": "rdt:f6",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m2": {
+      "prov:entity": "rdt:f5",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m1": {
+      "prov:entity": "rdt:f4",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m15": {
+      "prov:entity": "rdt:f15",
+      "prov:collection": "rdt:l6"
+    },
+    "rdt:m14": {
+      "prov:entity": "rdt:f14",
+      "prov:collection": "rdt:l6"
+    },
+    "rdt:m17": {
+      "prov:entity": "rdt:f17",
+      "prov:collection": "rdt:l6"
+    },
+    "rdt:m16": {
+      "prov:entity": "rdt:f16",
+      "prov:collection": "rdt:l6"
+    },
+    "rdt:m9": {
+      "prov:entity": "rdt:f1",
+      "prov:collection": "rdt:l4"
+    },
+    "rdt:m8": {
+      "prov:entity": "rdt:f11",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m11": {
+      "prov:entity": "rdt:f3",
+      "prov:collection": "rdt:l4"
+    },
+    "rdt:m7": {
+      "prov:entity": "rdt:f10",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m10": {
+      "prov:entity": "rdt:f2",
+      "prov:collection": "rdt:l4"
+    },
+    "rdt:m6": {
+      "prov:entity": "rdt:f9",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m13": {
+      "prov:entity": "rdt:f13",
+      "prov:collection": "rdt:l6"
+    },
+    "rdt:m5": {
+      "prov:entity": "rdt:f8",
+      "prov:collection": "rdt:l3"
+    },
+    "rdt:m12": {
+      "prov:entity": "rdt:f12",
+      "prov:collection": "rdt:l6"
+    }
+  },
+  "agent": {"rdt:a1": {
+    "rdt:args.names": [
+      "overwrite",
+      "details",
+      "annotate.inside.functions",
+      "first.loop",
+      "max.loops",
+      "snapshot.size",
+      "save.debug"
+    ],
+    "rdt:json.version": "2.3",
+    "rdt:tool.name": "rdt",
+    "rdt:tool.version": "3.3",
+    "rdt:args.values": [
+      "TRUE",
+      "TRUE",
+      "FALSE",
+      "1",
+      "0",
+      "0",
+      "FALSE"
+    ],
+    "rdt:args.types": [
+      "logical",
+      "logical",
+      "logical",
+      "integer",
+      "integer",
+      "numeric",
+      "logical"
+    ]
+  }},
+  "wasGeneratedBy": {
+    "rdt:pd5": {
+      "prov:entity": "rdt:d5",
+      "prov:activity": "rdt:p20"
+    },
+    "rdt:pd12": {
+      "prov:entity": "rdt:d12",
+      "prov:activity": "rdt:p35"
+    },
+    "rdt:pd4": {
+      "prov:entity": "rdt:d4",
+      "prov:activity": "rdt:p20"
+    },
+    "rdt:pd11": {
+      "prov:entity": "rdt:d11",
+      "prov:activity": "rdt:p32"
+    },
+    "rdt:pd7": {
+      "prov:entity": "rdt:d7",
+      "prov:activity": "rdt:p21"
+    },
+    "rdt:pd14": {
+      "prov:entity": "rdt:d14",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:pd6": {
+      "prov:entity": "rdt:d6",
+      "prov:activity": "rdt:p21"
+    },
+    "rdt:pd13": {
+      "prov:entity": "rdt:d13",
+      "prov:activity": "rdt:p37"
+    },
+    "rdt:pd9": {
+      "prov:entity": "rdt:d9",
+      "prov:activity": "rdt:p26"
+    },
+    "rdt:pd8": {
+      "prov:entity": "rdt:d8",
+      "prov:activity": "rdt:p23"
+    },
+    "rdt:pd10": {
+      "prov:entity": "rdt:d10",
+      "prov:activity": "rdt:p29"
+    },
+    "rdt:pd1": {
+      "prov:entity": "rdt:d1",
+      "prov:activity": "rdt:p7"
+    },
+    "rdt:pd3": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p10"
+    },
+    "rdt:pd2": {
+      "prov:entity": "rdt:d2",
+      "prov:activity": "rdt:p9"
+    },
+    "rdt:pd16": {
+      "prov:entity": "rdt:d16",
+      "prov:activity": "rdt:p40"
+    },
+    "rdt:pd15": {
+      "prov:entity": "rdt:d15",
+      "prov:activity": "rdt:p39"
+    }
+  },
+  "activity": {
+    "rdt:p7": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 14,
+      "rdt:startLine": 14,
+      "rdt:endCol": 35,
+      "id": "rdt:p7",
+      "rdt:elapsedTime": "0.17",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "builder <- DSI::newDSLoginBuilder()"
+    },
+    "rdt:p6": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 11,
+      "rdt:startLine": 11,
+      "rdt:endCol": 18,
+      "id": "rdt:p6",
+      "rdt:elapsedTime": "0.19",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "library('ggplot2')"
+    },
+    "rdt:p5": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 9,
+      "rdt:startLine": 9,
+      "rdt:endCol": 16,
+      "id": "rdt:p5",
+      "rdt:elapsedTime": "0.17",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "library('opalr')"
+    },
+    "rdt:p4": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 8,
+      "rdt:startLine": 8,
+      "rdt:endCol": 17,
+      "id": "rdt:p4",
+      "rdt:elapsedTime": "0.19",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "library('DSOpal')"
+    },
+    "rdt:p3": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 7,
+      "rdt:startLine": 7,
+      "rdt:endCol": 14,
+      "id": "rdt:p3",
+      "rdt:elapsedTime": "0.23",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "library('DSI')"
+    },
+    "rdt:p2": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 6,
+      "rdt:startLine": 6,
+      "rdt:endCol": 23,
+      "id": "rdt:p2",
+      "rdt:elapsedTime": "0.31",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "library('dsBaseClient')"
+    },
+    "rdt:p1": {
+      "rdt:startCol": "NA",
+      "rdt:scriptNum": 1,
+      "rdt:endLine": "NA",
+      "rdt:startLine": "NA",
+      "rdt:endCol": "NA",
+      "id": "rdt:p1",
+      "rdt:elapsedTime": "1.19",
+      "rdt:type": "Start",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "usecase4.R"
+    },
+    "rdt:p19": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 76,
+      "rdt:startLine": 71,
+      "rdt:endCol": 45,
+      "id": "rdt:p19",
+      "rdt:elapsedTime": "0.42",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation1', \n\t\t\t\t"
+    },
+    "rdt:p23": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 90,
+      "rdt:startLine": 90,
+      "rdt:endCol": 89,
+      "id": "rdt:p23",
+      "rdt:elapsedTime": "0.23",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.leq30 <- round(ds.mean('observation.vitb12.leq30"
+    },
+    "rdt:p22": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 89,
+      "rdt:startLine": 84,
+      "rdt:endCol": 45,
+      "id": "rdt:p22",
+      "rdt:elapsedTime": "0.4",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p25": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 104,
+      "rdt:startLine": 99,
+      "rdt:endCol": 45,
+      "id": "rdt:p25",
+      "rdt:elapsedTime": "0.38",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12.g30', \n\t  "
+    },
+    "rdt:p24": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 98,
+      "rdt:startLine": 93,
+      "rdt:endCol": 45,
+      "id": "rdt:p24",
+      "rdt:elapsedTime": "0.52",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p27": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 113,
+      "rdt:startLine": 108,
+      "rdt:endCol": 45,
+      "id": "rdt:p27",
+      "rdt:elapsedTime": "0.48",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p26": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 105,
+      "rdt:startLine": 105,
+      "rdt:endCol": 89,
+      "id": "rdt:p26",
+      "rdt:elapsedTime": "0.23",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.30.40 <- round(ds.mean('observation.vitb12.30.40"
+    },
+    "rdt:p29": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 120,
+      "rdt:startLine": 120,
+      "rdt:endCol": 89,
+      "id": "rdt:p29",
+      "rdt:elapsedTime": "0.24",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.40.50 <- round(ds.mean('observation.vitb12.40.50"
+    },
+    "rdt:p28": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 119,
+      "rdt:startLine": 114,
+      "rdt:endCol": 45,
+      "id": "rdt:p28",
+      "rdt:elapsedTime": "0.44",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12.g40', \n\t  "
+    },
+    "rdt:p40": {
+      "rdt:startCol": "NA",
+      "rdt:scriptNum": 1,
+      "rdt:endLine": "NA",
+      "rdt:startLine": "NA",
+      "rdt:endCol": "NA",
+      "id": "rdt:p40",
+      "rdt:elapsedTime": "0.06",
+      "rdt:type": "Finish",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "usecase4.R"
+    },
+    "rdt:p21": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 80,
+      "rdt:startLine": 80,
+      "rdt:endCol": 81,
+      "id": "rdt:p21",
+      "rdt:elapsedTime": "0.59",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.histogram('observation.vitb12$age', num.breaks = 8, datas"
+    },
+    "rdt:p20": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 79,
+      "rdt:startLine": 79,
+      "rdt:endCol": 70,
+      "id": "rdt:p20",
+      "rdt:elapsedTime": "0.52",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.histogram('patient$age', num.breaks = 8, datasources = co"
+    },
+    "rdt:p12": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 28,
+      "rdt:startLine": 26,
+      "rdt:endCol": 36,
+      "id": "rdt:p12",
+      "rdt:elapsedTime": "0.27",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.assign(toAssign = \"patient$id\", \n\t\t  newobj = \"pati"
+    },
+    "rdt:p34": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 149,
+      "rdt:startLine": 144,
+      "rdt:endCol": 45,
+      "id": "rdt:p34",
+      "rdt:elapsedTime": "0.37",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12.g60', \n\t  "
+    },
+    "rdt:p11": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 23,
+      "rdt:startLine": 23,
+      "rdt:endCol": 106,
+      "id": "rdt:p11",
+      "rdt:elapsedTime": "0.26",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "datashield.assign(connections, symbol = \"patient\", value = \""
+    },
+    "rdt:p33": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 143,
+      "rdt:startLine": 138,
+      "rdt:endCol": 45,
+      "id": "rdt:p33",
+      "rdt:elapsedTime": "0.36",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p14": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 35,
+      "rdt:startLine": 32,
+      "rdt:endCol": 39,
+      "id": "rdt:p14",
+      "rdt:elapsedTime": "0.47",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrame(x = c('observation$patient_id', 'observation$va"
+    },
+    "rdt:p36": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 159,
+      "rdt:startLine": 154,
+      "rdt:endCol": 45,
+      "id": "rdt:p36",
+      "rdt:elapsedTime": "0.36",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p13": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 30,
+      "rdt:startLine": 30,
+      "rdt:endCol": 86,
+      "id": "rdt:p13",
+      "rdt:elapsedTime": "0.39",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.cbind(x = c('patient', 'patient_id'), newobj = \"patient1\""
+    },
+    "rdt:p35": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 150,
+      "rdt:startLine": 150,
+      "rdt:endCol": 89,
+      "id": "rdt:p35",
+      "rdt:elapsedTime": "0.3",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.60.70 <- round(ds.mean('observation.vitb12.60.70"
+    },
+    "rdt:p16": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 52,
+      "rdt:startLine": 42,
+      "rdt:endCol": 35,
+      "id": "rdt:p16",
+      "rdt:elapsedTime": "0.41",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.merge(x.name = \"patient.frame\",\n\t\t y.name = \"observ"
+    },
+    "rdt:p38": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 165,
+      "rdt:startLine": 163,
+      "rdt:endCol": 68,
+      "id": "rdt:p38",
+      "rdt:elapsedTime": "0.28",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.df <- data.frame(type=c('<=30', '30-40', '40-50', '50"
+    },
+    "rdt:p15": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 39,
+      "rdt:startLine": 36,
+      "rdt:endCol": 39,
+      "id": "rdt:p15",
+      "rdt:elapsedTime": "0.51",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrame(x = c('patient1$patient_id', 'patient1$age'),\n "
+    },
+    "rdt:p37": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 160,
+      "rdt:startLine": 160,
+      "rdt:endCol": 85,
+      "id": "rdt:p37",
+      "rdt:elapsedTime": "0.22",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.g70 <- round(ds.mean('observation.vitb12.g70$val"
+    },
+    "rdt:p18": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 69,
+      "rdt:startLine": 69,
+      "rdt:endCol": 73,
+      "id": "rdt:p18",
+      "rdt:elapsedTime": "0.53",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.cbind(x = c('observation.age', 'vitb12.all'), newobj = \"o"
+    },
+    "rdt:p17": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 66,
+      "rdt:startLine": 56,
+      "rdt:endCol": 33,
+      "id": "rdt:p17",
+      "rdt:elapsedTime": "0.53",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.rep(x1=\"VIT-B12\", \n\t   times = 1631, \n\t   length.ou"
+    },
+    "rdt:p39": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 169,
+      "rdt:startLine": 166,
+      "rdt:endCol": 43,
+      "id": "rdt:p39",
+      "rdt:elapsedTime": "0.22",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ggplot(vitb12.df, aes(x=type, y=count)) +\n  geom_bar(stat='i"
+    },
+    "rdt:p30": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 128,
+      "rdt:startLine": 123,
+      "rdt:endCol": 45,
+      "id": "rdt:p30",
+      "rdt:elapsedTime": "0.45",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12', \n\t\t  "
+    },
+    "rdt:p9": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 19,
+      "rdt:startLine": 19,
+      "rdt:endCol": 28,
+      "id": "rdt:p9",
+      "rdt:elapsedTime": "0.19",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "logindata <- builder$build()"
+    },
+    "rdt:p10": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 20,
+      "rdt:startLine": 20,
+      "rdt:endCol": 95,
+      "id": "rdt:p10",
+      "rdt:elapsedTime": "0.37",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "connections <- DSI::datashield.login(logins = logindata, ass"
+    },
+    "rdt:p32": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 135,
+      "rdt:startLine": 135,
+      "rdt:endCol": 89,
+      "id": "rdt:p32",
+      "rdt:elapsedTime": "0.22",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.50.60 <- round(ds.mean('observation.vitb12.50.60"
+    },
+    "rdt:p8": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 18,
+      "rdt:startLine": 15,
+      "rdt:endCol": 97,
+      "id": "rdt:p8",
+      "rdt:elapsedTime": "0.17",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "builder$append(server = \"study1\", \n\t\t\t   url = \"htt"
+    },
+    "rdt:p31": {
+      "rdt:startCol": 1,
+      "rdt:scriptNum": 1,
+      "rdt:endLine": 134,
+      "rdt:startLine": 129,
+      "rdt:endCol": 45,
+      "id": "rdt:p31",
+      "rdt:elapsedTime": "0.42",
+      "rdt:type": "Operation",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "ds.dataFrameSubset(df.name='observation.vitb12.g50', \n\t  "
+    }
+  },
+  "study-id": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+  "prefix": {
+    "rdt": "https://github.com/End-to-end-provenance/ExtendedProvJson/blob/master/JSON-format.md",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "wasInformedBy": {
+    "rdt:pp1": {
+      "prov:informed": "rdt:p2",
+      "prov:informant": "rdt:p1"
+    },
+    "rdt:pp16": {
+      "prov:informed": "rdt:p17",
+      "prov:informant": "rdt:p16"
+    },
+    "rdt:pp38": {
+      "prov:informed": "rdt:p39",
+      "prov:informant": "rdt:p38"
+    },
+    "rdt:pp15": {
+      "prov:informed": "rdt:p16",
+      "prov:informant": "rdt:p15"
+    },
+    "rdt:pp37": {
+      "prov:informed": "rdt:p38",
+      "prov:informant": "rdt:p37"
+    },
+    "rdt:pp3": {
+      "prov:informed": "rdt:p4",
+      "prov:informant": "rdt:p3"
+    },
+    "rdt:pp18": {
+      "prov:informed": "rdt:p19",
+      "prov:informant": "rdt:p18"
+    },
+    "rdt:pp2": {
+      "prov:informed": "rdt:p3",
+      "prov:informant": "rdt:p2"
+    },
+    "rdt:pp17": {
+      "prov:informed": "rdt:p18",
+      "prov:informant": "rdt:p17"
+    },
+    "rdt:pp39": {
+      "prov:informed": "rdt:p40",
+      "prov:informant": "rdt:p39"
+    },
+    "rdt:pp5": {
+      "prov:informed": "rdt:p6",
+      "prov:informant": "rdt:p5"
+    },
+    "rdt:pp12": {
+      "prov:informed": "rdt:p13",
+      "prov:informant": "rdt:p12"
+    },
+    "rdt:pp34": {
+      "prov:informed": "rdt:p35",
+      "prov:informant": "rdt:p34"
+    },
+    "rdt:pp4": {
+      "prov:informed": "rdt:p5",
+      "prov:informant": "rdt:p4"
+    },
+    "rdt:pp11": {
+      "prov:informed": "rdt:p12",
+      "prov:informant": "rdt:p11"
+    },
+    "rdt:pp33": {
+      "prov:informed": "rdt:p34",
+      "prov:informant": "rdt:p33"
+    },
+    "rdt:pp7": {
+      "prov:informed": "rdt:p8",
+      "prov:informant": "rdt:p7"
+    },
+    "rdt:pp14": {
+      "prov:informed": "rdt:p15",
+      "prov:informant": "rdt:p14"
+    },
+    "rdt:pp36": {
+      "prov:informed": "rdt:p37",
+      "prov:informant": "rdt:p36"
+    },
+    "rdt:pp6": {
+      "prov:informed": "rdt:p7",
+      "prov:informant": "rdt:p6"
+    },
+    "rdt:pp13": {
+      "prov:informed": "rdt:p14",
+      "prov:informant": "rdt:p13"
+    },
+    "rdt:pp35": {
+      "prov:informed": "rdt:p36",
+      "prov:informant": "rdt:p35"
+    },
+    "rdt:pp30": {
+      "prov:informed": "rdt:p31",
+      "prov:informant": "rdt:p30"
+    },
+    "rdt:pp10": {
+      "prov:informed": "rdt:p11",
+      "prov:informant": "rdt:p10"
+    },
+    "rdt:pp32": {
+      "prov:informed": "rdt:p33",
+      "prov:informant": "rdt:p32"
+    },
+    "rdt:pp31": {
+      "prov:informed": "rdt:p32",
+      "prov:informant": "rdt:p31"
+    },
+    "rdt:pp9": {
+      "prov:informed": "rdt:p10",
+      "prov:informant": "rdt:p9"
+    },
+    "rdt:pp8": {
+      "prov:informed": "rdt:p9",
+      "prov:informant": "rdt:p8"
+    },
+    "rdt:pp19": {
+      "prov:informed": "rdt:p20",
+      "prov:informant": "rdt:p19"
+    },
+    "rdt:pp27": {
+      "prov:informed": "rdt:p28",
+      "prov:informant": "rdt:p27"
+    },
+    "rdt:pp26": {
+      "prov:informed": "rdt:p27",
+      "prov:informant": "rdt:p26"
+    },
+    "rdt:pp29": {
+      "prov:informed": "rdt:p30",
+      "prov:informant": "rdt:p29"
+    },
+    "rdt:pp28": {
+      "prov:informed": "rdt:p29",
+      "prov:informant": "rdt:p28"
+    },
+    "rdt:pp23": {
+      "prov:informed": "rdt:p24",
+      "prov:informant": "rdt:p23"
+    },
+    "rdt:pp22": {
+      "prov:informed": "rdt:p23",
+      "prov:informant": "rdt:p22"
+    },
+    "rdt:pp25": {
+      "prov:informed": "rdt:p26",
+      "prov:informant": "rdt:p25"
+    },
+    "rdt:pp24": {
+      "prov:informed": "rdt:p25",
+      "prov:informant": "rdt:p24"
+    },
+    "rdt:pp21": {
+      "prov:informed": "rdt:p22",
+      "prov:informant": "rdt:p21"
+    },
+    "rdt:pp20": {
+      "prov:informed": "rdt:p21",
+      "prov:informant": "rdt:p20"
+    }
+  },
+  "used": {
+    "rdt:fp28": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p36"
+    },
+    "rdt:fp29": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p37"
+    },
+    "rdt:dp1": {
+      "prov:entity": "rdt:d1",
+      "prov:activity": "rdt:p8"
+    },
+    "rdt:dp3": {
+      "prov:entity": "rdt:d2",
+      "prov:activity": "rdt:p10"
+    },
+    "rdt:fp1": {
+      "prov:entity": "rdt:f1",
+      "prov:activity": "rdt:p7"
+    },
+    "rdt:dp2": {
+      "prov:entity": "rdt:d1",
+      "prov:activity": "rdt:p9"
+    },
+    "rdt:fp20": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p28"
+    },
+    "rdt:fp21": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p29"
+    },
+    "rdt:fp22": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p30"
+    },
+    "rdt:fp23": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p31"
+    },
+    "rdt:fp24": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p32"
+    },
+    "rdt:fp25": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p33"
+    },
+    "rdt:fp26": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p34"
+    },
+    "rdt:fp27": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p35"
+    },
+    "rdt:fp30": {
+      "prov:entity": "rdt:f12",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:dp5": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p12"
+    },
+    "rdt:fp3": {
+      "prov:entity": "rdt:f3",
+      "prov:activity": "rdt:p11"
+    },
+    "rdt:dp4": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p11"
+    },
+    "rdt:fp2": {
+      "prov:entity": "rdt:f2",
+      "prov:activity": "rdt:p10"
+    },
+    "rdt:dp7": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p14"
+    },
+    "rdt:fp5": {
+      "prov:entity": "rdt:f5",
+      "prov:activity": "rdt:p13"
+    },
+    "rdt:dp6": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p13"
+    },
+    "rdt:fp4": {
+      "prov:entity": "rdt:f4",
+      "prov:activity": "rdt:p12"
+    },
+    "rdt:dp9": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p16"
+    },
+    "rdt:fp7": {
+      "prov:entity": "rdt:f6",
+      "prov:activity": "rdt:p15"
+    },
+    "rdt:dp8": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p15"
+    },
+    "rdt:fp6": {
+      "prov:entity": "rdt:f6",
+      "prov:activity": "rdt:p14"
+    },
+    "rdt:fp9": {
+      "prov:entity": "rdt:f8",
+      "prov:activity": "rdt:p17"
+    },
+    "rdt:fp8": {
+      "prov:entity": "rdt:f7",
+      "prov:activity": "rdt:p16"
+    },
+    "rdt:dp14": {
+      "prov:entity": "rdt:d5",
+      "prov:activity": "rdt:p21"
+    },
+    "rdt:dp13": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p21"
+    },
+    "rdt:dp12": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p20"
+    },
+    "rdt:dp11": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p19"
+    },
+    "rdt:dp10": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p17"
+    },
+    "rdt:fp31": {
+      "prov:entity": "rdt:f13",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:fp32": {
+      "prov:entity": "rdt:f14",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:fp33": {
+      "prov:entity": "rdt:f15",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:dp19": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p28"
+    },
+    "rdt:fp34": {
+      "prov:entity": "rdt:f16",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:dp18": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p27"
+    },
+    "rdt:fp35": {
+      "prov:entity": "rdt:f17",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:dp17": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p25"
+    },
+    "rdt:dp16": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p24"
+    },
+    "rdt:dp15": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p22"
+    },
+    "rdt:dp25": {
+      "prov:entity": "rdt:d8",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:dp24": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p36"
+    },
+    "rdt:dp23": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p34"
+    },
+    "rdt:dp22": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p33"
+    },
+    "rdt:dp21": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p31"
+    },
+    "rdt:dp20": {
+      "prov:entity": "rdt:d3",
+      "prov:activity": "rdt:p30"
+    },
+    "rdt:dp29": {
+      "prov:entity": "rdt:d12",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:dp28": {
+      "prov:entity": "rdt:d11",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:dp27": {
+      "prov:entity": "rdt:d10",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:dp26": {
+      "prov:entity": "rdt:d9",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:fp17": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p25"
+    },
+    "rdt:fp18": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p26"
+    },
+    "rdt:fp19": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p27"
+    },
+    "rdt:dp32": {
+      "prov:entity": "rdt:d7",
+      "prov:activity": "rdt:p40"
+    },
+    "rdt:dp31": {
+      "prov:entity": "rdt:d14",
+      "prov:activity": "rdt:p39"
+    },
+    "rdt:dp30": {
+      "prov:entity": "rdt:d13",
+      "prov:activity": "rdt:p38"
+    },
+    "rdt:fp10": {
+      "prov:entity": "rdt:f5",
+      "prov:activity": "rdt:p18"
+    },
+    "rdt:fp11": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p19"
+    },
+    "rdt:fp12": {
+      "prov:entity": "rdt:f10",
+      "prov:activity": "rdt:p20"
+    },
+    "rdt:fp13": {
+      "prov:entity": "rdt:f10",
+      "prov:activity": "rdt:p21"
+    },
+    "rdt:fp14": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p22"
+    },
+    "rdt:fp15": {
+      "prov:entity": "rdt:f11",
+      "prov:activity": "rdt:p23"
+    },
+    "rdt:fp16": {
+      "prov:entity": "rdt:f9",
+      "prov:activity": "rdt:p24"
+    }
+  },
+  "entity": {
+    "rdt:l3": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "dsBaseClient",
+      "id": "rdt:l3",
+      "type": "LibraryNode",
+      "version": "6.0.1",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l2": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "datasets",
+      "id": "rdt:l2",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l1": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "base",
+      "id": "rdt:l1",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:d10": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d10",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "186.7",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.40.50",
+      "rdt:hash": ""
+    },
+    "rdt:d12": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d12",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "191.5",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.60.70",
+      "rdt:hash": ""
+    },
+    "rdt:f10": {
+      "name": "ds.histogram",
+      "id": "rdt:f10",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:d11": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d11",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "209",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.50.60",
+      "rdt:hash": ""
+    },
+    "rdt:d14": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d14",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "Row 1 <=30 177.5",
+      "rdt:valType": "{\"container\":\"data_frame\", \"dimension\":[6,2], \"type\":[\"character\",\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.df",
+      "rdt:hash": ""
+    },
+    "rdt:f12": {
+      "name": "ggplot",
+      "id": "rdt:f12",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:d13": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d13",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "193.3",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.g70",
+      "rdt:hash": ""
+    },
+    "rdt:f11": {
+      "name": "ds.mean",
+      "id": "rdt:f11",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l16": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "utils",
+      "id": "rdt:l16",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l15": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "stats",
+      "id": "rdt:l15",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f9": {
+      "name": "ds.dataFrameSubset",
+      "id": "rdt:f9",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f8": {
+      "name": "ds.rep",
+      "id": "rdt:f8",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f7": {
+      "name": "ds.merge",
+      "id": "rdt:f7",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f6": {
+      "name": "ds.dataFrame",
+      "id": "rdt:f6",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:d16": {
+      "rdt:scope": "undefined",
+      "rdt:location": "C:/Users/tsarcevic/Documents/dev.off.16.pdf",
+      "rdt:timestamp": "2020-11-12T17.21.56CET",
+      "rdt:fromEnv": false,
+      "id": "rdt:d16",
+      "type": "DataNode",
+      "rdt:type": "File",
+      "rdt:value": "data/16-dev.off.16.pdf",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "dev.off.16.pdf",
+      "rdt:hash": "3d4f9e21131901af85c96b12606b06be"
+    },
+    "rdt:f5": {
+      "name": "ds.cbind",
+      "id": "rdt:f5",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f14": {
+      "name": "geom_bar",
+      "id": "rdt:f14",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:d15": {
+      "rdt:scope": "undefined",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d15",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "\"<=30\"$data.type2[1] \"30-40\"$data.type3[1] \"40-50\"$data.type4[1] \"50,60\"$data.ty...",
+      "rdt:valType": "gg",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": ".ggplot",
+      "rdt:hash": ""
+    },
+    "rdt:f4": {
+      "name": "ds.assign",
+      "id": "rdt:f4",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f13": {
+      "name": "aes",
+      "id": "rdt:f13",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l10": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "methods",
+      "id": "rdt:l10",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f3": {
+      "name": "datashield.assign",
+      "id": "rdt:f3",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f16": {
+      "name": "ylab",
+      "id": "rdt:f16",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f2": {
+      "name": "datashield.login",
+      "id": "rdt:f2",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f15": {
+      "name": "geom_text",
+      "id": "rdt:f15",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l12": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "progress",
+      "id": "rdt:l12",
+      "type": "LibraryNode",
+      "version": "1.2.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f1": {
+      "name": "newDSLoginBuilder",
+      "id": "rdt:f1",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l11": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "opalr",
+      "id": "rdt:l11",
+      "type": "LibraryNode",
+      "version": "1.4.1",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:f17": {
+      "name": "xlab",
+      "id": "rdt:f17",
+      "type": "FunctionNode",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l14": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "rdt",
+      "id": "rdt:l14",
+      "type": "LibraryNode",
+      "version": "3.3",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l13": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "R6",
+      "id": "rdt:l13",
+      "type": "LibraryNode",
+      "version": "2.4.1",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:environment": {
+      "rdt:provDirectory": "C:/Users/tsarcevic/AppData/Local/Temp/RtmpgpNJzO/prov_usecase4",
+      "rdt:hashAlgorithm": "md5",
+      "rdt:script": "C:/Users/tsarcevic/PycharmProjects/wellfort-poc/analysis/usecase4.R",
+      "rdt:operatingSystem": "Windows 10 x64 (build 18363)",
+      "rdt:langVersion": "R version 4.0.2 (2020-06-22)",
+      "rdt:scriptTimeStamp": "2020-11-10T16.19.53CET",
+      "type": "Environment",
+      "rdt:provTimestamp": "2020-11-12T17.21.10CET",
+      "rdt:architecture": "x86_64-w64-mingw32/x64 (64-bit)",
+      "rdt:sourcedScriptTimeStamps": "",
+      "rdt:name": "environment",
+      "rdt:sourcedScriptHashes": "",
+      "rdt:totalElapsedTime": "14.26",
+      "rdt:sourcedScripts": "",
+      "rdt:workingDirectory": "C:/Users/tsarcevic/Documents",
+      "id": "rdt:environment",
+      "rdt:language": "R",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:scriptHash": "43649deb5dc356ca12434bed511f3127"
+    },
+    "rdt:d9": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d9",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "192.9",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.30.40",
+      "rdt:hash": ""
+    },
+    "rdt:d8": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d8",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "177.5",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"numeric\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "vitb12.mean.leq30",
+      "rdt:hash": ""
+    },
+    "rdt:d7": {
+      "rdt:scope": "undefined",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d7",
+      "type": "DataNode",
+      "rdt:type": "Device",
+      "rdt:value": "",
+      "rdt:valType": "Device",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "dev.2",
+      "rdt:hash": ""
+    },
+    "rdt:d6": {
+      "rdt:scope": "ddg.library",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d6",
+      "type": "DataNode",
+      "rdt:type": "Exception",
+      "rdt:value": " study1: 0 invalid cells",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "warning.msg",
+      "rdt:hash": ""
+    },
+    "rdt:d5": {
+      "rdt:scope": "undefined",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d5",
+      "type": "DataNode",
+      "rdt:type": "Device",
+      "rdt:value": "",
+      "rdt:valType": "Device",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "dev.2",
+      "rdt:hash": ""
+    },
+    "rdt:d4": {
+      "rdt:scope": "ddg.library",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d4",
+      "type": "DataNode",
+      "rdt:type": "Exception",
+      "rdt:value": " study1: 0 invalid cells",
+      "rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "warning.msg",
+      "rdt:hash": ""
+    },
+    "rdt:d3": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d3",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "\"study1\"Slot \"opal\":url: https://opal-demo.obiba.org name: study1 version: 3.0.4...",
+      "rdt:valType": "{\"container\":\"list\", \"dimension\":[1]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "connections",
+      "rdt:hash": ""
+    },
+    "rdt:d2": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d2",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "Row 1 study1 https://opal-demo.obiba.org/ bfff8a82-132a-46f1-9a3e-76e82f34b96d.o...",
+      "rdt:valType": "{\"container\":\"data_frame\", \"dimension\":[1,9], \"type\":[\"character\",\"character\",\"character\",\"character\",\"character\",\"character\",\"character\",\"character\",\"character\"]}",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "logindata",
+      "rdt:hash": ""
+    },
+    "rdt:d1": {
+      "rdt:scope": "R_GlobalEnv",
+      "rdt:location": "",
+      "rdt:timestamp": "",
+      "rdt:fromEnv": false,
+      "id": "rdt:d1",
+      "type": "DataNode",
+      "rdt:type": "Data",
+      "rdt:value": "Environment : \"append\"\t \"build\"\t  \"clone\"\t  \"initialize\"",
+      "rdt:valType": "DSLoginBuilder",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c",
+      "rdt:name": "builder",
+      "rdt:hash": ""
+    },
+    "rdt:l9": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "httr",
+      "id": "rdt:l9",
+      "type": "LibraryNode",
+      "version": "1.4.1",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l8": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "grDevices",
+      "id": "rdt:l8",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l7": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "graphics",
+      "id": "rdt:l7",
+      "type": "LibraryNode",
+      "version": "4.0.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l6": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "ggplot2",
+      "id": "rdt:l6",
+      "type": "LibraryNode",
+      "version": "3.3.2",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l5": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "DSOpal",
+      "id": "rdt:l5",
+      "type": "LibraryNode",
+      "version": "1.1.0",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    },
+    "rdt:l4": {
+      "prov:type": {
+        "$": "prov:Collection",
+        "type": "xsd:QName"
+      },
+      "name": "DSI",
+      "id": "rdt:l4",
+      "type": "LibraryNode",
+      "version": "1.1.0",
+      "key": "6b3a3b69-2356-402c-89d9-43d3f7c6b17c"
+    }
+  }
+}

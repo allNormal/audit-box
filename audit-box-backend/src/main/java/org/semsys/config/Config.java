@@ -12,6 +12,8 @@ public final class Config {
     public String csvReceiver;
     public String shapes;
     public String provenance;
+    public String sao;
+    public String ep_plan;
     public String workflow;
 
     public String logFile;

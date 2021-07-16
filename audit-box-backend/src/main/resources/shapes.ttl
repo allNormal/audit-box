@@ -7,11 +7,117 @@
 @prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix prov:   <http://www.w3.org/ns/prov#> .
-@prefix : <http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox#> .
 @prefix ex: <http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Shacl#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
 
+ex:TransformToJSON a sh:NodeShape ;
+                        sh:targetClass prov:Activity ;
+                        sh:property [
+                                    sh:path :correspondsToActivity ;
+                                    sh:class :Transform_to_JSONPlan;
+                        ] ;
+
+.
+ex:Get_Website_RAW a sh:NodeShape ;
+                   sh:targetClass prov:Activity ;
+                   sh:property [
+                                   sh:path :correspondsToActivity ;
+                                   sh:class :Get_Website_RAWPlan;
+                               ] ;
+
+.
+ex:Run a sh:NodeShape ;
+                   sh:targetClass prov:Activity ;
+                   sh:property [
+                                   sh:path :correspondsToActivity ;
+                                   sh:class :RunPlan;
+                               ] ;
+
+.
+ex:JupyterNotebook a sh:NodeShape ;
+                        sh:targetClass prov:Agent ;
+                        sh:property [
+                                    sh:path :correspondsToVariable ;
+                                    sh:class :JupyterNotebookPlan ;
+                        ] ;
+.
+
+ex:DockerContainer a sh:NodeShape ;
+                   sh:targetClass prov:Agent ;
+                   sh:property [
+                                   sh:path :correspondsToVariable ;
+                                   sh:class :DockerContainerPlan ;
+                               ] ;
+.
+ex:DockerImage a sh:NodeShape ;
+                   sh:targetClass prov:Entity ;
+                   sh:property [
+                                   sh:path :correspondsToVariable ;
+                                   sh:class :DockerImagePlan ;
+                               ] ;
+.
+ex:AirportRAW a sh:NodeShape ;
+                   sh:targetClass prov:Entity ;
+                   sh:property [
+                                   sh:path :correspondsToVariable ;
+                                   sh:class :AirportRAWPlan ;
+                               ] ;
+.
+ex:AirportJSON a sh:NodeShape ;
+                   sh:targetClass prov:Entity ;
+                   sh:property [
+                                   sh:path :correspondsToVariable ;
+                                   sh:class :AirportJSONPlan ;
+                               ] ;
+.
+ex:ValidatingData a sh:NodeShape ;
+                        sh:targetClass :ExecutionTraceBundle ;
+                        sh:and(
+                                [
+                                        sh:path :hasElement ;
+                                        sh:node ex:TransformToJSON;
+
+                                ]
+                                [
+                                        sh:path :hasElement ;
+                                        sh:node ex:Run;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:JupyterNotebook;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:DockerContainer;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:DockerImage;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:AirportJSON;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:AirportRAW;
+
+                                ]
+                                [
+                                    sh:path :hasElement ;
+                                    sh:node ex:Get_Website_RAW;
+
+                                ]
+                              )
+.
 ex:EntityConstraint a sh:NodeShape ;
                         sh:targetClass prov:Entity ;
                         sh:property [

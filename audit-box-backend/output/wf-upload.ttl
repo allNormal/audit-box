@@ -1,0 +1,17 @@
+@prefix : <http://w3id.org/wellfort/ns/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix id: <http://w3id.org/wellfort/id/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+id:upload-98ccfd45-a53a-4bde-b459-117d5f1d219e a :Upload, prov:Activity;
+  prov:startedAtTime "2021-01-20T21:23:19.371628+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:endedAtTime "2021-01-20T21:23:19.750362+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  prov:wasAssociatedWith id:script-%2Fusr%2Fsrc%2Fapp%2Fapp%2Fv1%2Fmain%2Fapi.py%3A40 .
+
+id:dataset-303 a prov:Entity, :InvenioRecord;
+  prov:wasGeneratedBy id:upload-98ccfd45-a53a-4bde-b459-117d5f1d219e;
+  prov:generatedAtTime "2021-01-20T21:23:19.688565+00:00"^^<http://www.w3.org/2001/XMLSchema#datetime>;
+  :hasConsent id:consent-98ccfd45-a53a-4bde-b459-117d5f1d219e;
+  prov:wasAttributedTo id:patient-367 .

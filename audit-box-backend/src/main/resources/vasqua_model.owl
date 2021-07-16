@@ -1,0 +1,318 @@
+@prefix : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox> .
+
+<http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox> rdf:type owl:Ontology ;
+                                                                      <http://purl.org/dc/terms/creator> <https://www.abdn.ac.uk/ncs/profiles/iman.naja> ,
+                                                                                                         <https://www.abdn.ac.uk/ncs/profiles/milan.markovic/> ,
+                                                                                                         "https://www.abdn.ac.uk/ncs/profiles/p.edwards" ;
+                                                                      <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+                                                                      <http://purl.org/dc/terms/title> "The RAInS Ontology"@en ;
+                                                                      rdfs:comment "To contact the RAInS team, please send an email to therainsproject [at] gmail [dot] com"@en ;
+                                                                      rdfs:label "The RAInS Ontology"@en ;
+                                                                      owl:versionInfo "1.1, December 2020"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasAuditabilityTrace
+:hasAuditabilityTrace rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasRealizableObjectCharacteristic
+:hasRealizableObjectCharacteristic rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf :isCharacteristicOfRealizableObject ;
+                                   rdfs:comment "A relation that links a realizable object (e.g., model) to the information element describing its characteristic." ;
+                                   rdfs:label "hasRealizableObjectCharacteristic" .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#isCharacteristicOfRealizableObject
+:isCharacteristicOfRealizableObject rdf:type owl:ObjectProperty ;
+                                    rdfs:comment "Inverse of hasRealizableObjectCharacteristic" ;
+                                    rdfs:label "isCharacteristicOfRealizableObject" .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#correspondsToStep
+<https://w3id.org/ep-plan#correspondsToStep> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#correspondsToVariable
+<https://w3id.org/ep-plan#correspondsToVariable> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasInputVariable
+<https://w3id.org/ep-plan#hasInputVariable> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasOutputVariable
+<https://w3id.org/ep-plan#hasOutputVariable> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasTraceElement
+<https://w3id.org/ep-plan#hasTraceElement> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#includesPlanElement
+<https://w3id.org/ep-plan#includesPlanElement> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isElementOfPlan
+<https://w3id.org/ep-plan#isElementOfPlan> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isElementOfTrace
+<https://w3id.org/ep-plan#isElementOfTrace> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/rains#specifiedForSystem
+:specifiedForSystem rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#isReusedObject
+:isReusedObject rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "A value indicating whether the :RealizableObject is a third party resource." ;
+                rdfs:label "isReusedObject" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSON
+:AirportJSON rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSONProvenance
+:AirportJSONProvenance rdf:type owl:Class ;
+                       rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAW
+:AirportRAW rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAWProvenance
+:AirportRAWProvenance rdf:type owl:Class ;
+                      rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DesignStageAccountabilityPlan
+:DesignStageAccountabilityPlan rdf:type owl:Class ;
+                               rdfs:subClassOf <https://w3id.org/sao#AccountabilityPlan> ;
+                               rdfs:comment "A plan that identifies sao:AccountableAcction(s) and sao:AccountableResult(s) relevnt to the design stage of an AI system and  which are required to be documented for accountability purposes." ;
+                               rdfs:label "Design Stage Accountability Plan" .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerContainer
+:DockerContainer rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerContainerProvenance
+:DockerContainerProvenance rdf:type owl:Class ;
+                           rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerImage
+:DockerImage rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerImageProvenance
+:DockerImageProvenance rdf:type owl:Class ;
+                       rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#GetWebsiteRAW
+:GetWebsiteRAW rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/sao#AccountableAction> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#JupyterNotebook
+:JupyterNotebook rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#JupyterNotebookProvenance
+:JupyterNotebookProvenance rdf:type owl:Class ;
+                           rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Libraries
+:Libraries rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Library
+:Library rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDB
+:MongoDB rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/sao#AccountableResult> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDBProvenance
+:MongoDBProvenance rdf:type owl:Class ;
+                   rdfs:subClassOf <https://w3id.org/sao#InformationElement> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Run
+:Run rdf:type owl:Class ;
+     rdfs:subClassOf <https://w3id.org/sao#AccountableAction> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#TransformToJSON
+:TransformToJSON rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/sao#AccountableAction> .
+
+
+###  https://w3id.org/sao#AccountabilityPlan
+<https://w3id.org/sao#AccountabilityPlan> rdf:type owl:Class .
+
+
+###  https://w3id.org/sao#AccountableAction
+<https://w3id.org/sao#AccountableAction> rdf:type owl:Class .
+
+
+###  https://w3id.org/sao#AccountableResult
+<https://w3id.org/sao#AccountableResult> rdf:type owl:Class .
+
+
+###  https://w3id.org/sao#InformationElement
+<https://w3id.org/sao#InformationElement> rdf:type owl:Class .
+
+
+###  https://w3id.org/sao#System
+<https://w3id.org/sao#System> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSONPlan
+:AirportJSONPlan rdf:type owl:NamedIndividual ,
+                          :AirportJSON ;
+                 <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAWPlan
+:AirportRAWPlan rdf:type owl:NamedIndividual ,
+                         :AirportRAW ;
+                <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerContainerPlan
+:DockerContainerPlan rdf:type owl:NamedIndividual ,
+                              :DockerContainer ;
+                     <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerImagePlan
+:DockerImagePlan rdf:type owl:NamedIndividual ,
+                          :DockerImage ;
+                 <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#GetWebsiteRAWPlan
+:GetWebsiteRAWPlan rdf:type owl:NamedIndividual ,
+                            :GetWebsiteRAW ;
+                   <https://w3id.org/ep-plan#hasInputVariable> :JupyterNotebookPlan ,
+                                                               :MongoDBPlan ;
+                   <https://w3id.org/ep-plan#hasOutputVariable> :AirportRAWPlan ;
+                   <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#JupyterNotebookPlan
+:JupyterNotebookPlan rdf:type owl:NamedIndividual ,
+                              :JupyterNotebook ;
+                     <http://www.w3.org/ns/prov#used> :LibrariesPlan ;
+                     <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#LibrariesPlan
+:LibrariesPlan rdf:type owl:NamedIndividual ,
+                        :Libraries ;
+               <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDBPlan
+:MongoDBPlan rdf:type owl:NamedIndividual ,
+                      :MongoDB ;
+             <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#RunPlan
+:RunPlan rdf:type owl:NamedIndividual ,
+                  :Run ;
+         <https://w3id.org/ep-plan#hasInputVariable> :DockerImagePlan ;
+         <https://w3id.org/ep-plan#hasOutputVariable> :DockerContainerPlan ;
+         <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#TransformToJSONPlan
+:TransformToJSONPlan rdf:type owl:NamedIndividual ,
+                              :TransformToJSON ;
+                     <https://w3id.org/ep-plan#hasInputVariable> :AirportRAWPlan ,
+                                                                 :JupyterNotebookPlan ;
+                     <https://w3id.org/ep-plan#hasOutputVariable> :AirportJSONPlan ;
+                     <https://w3id.org/ep-plan#isElementOfPlan> :VasquaPlan .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Vasqua
+:Vasqua rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/sao#System> .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#VasquaPlan
+:VasquaPlan rdf:type owl:NamedIndividual ,
+                     :DesignStageAccountabilityPlan ;
+            <https://w3id.org/ep-plan#includesPlanElement> :AirportJSONPlan ,
+                                                           :AirportRAWPlan ,
+                                                           :DockerContainerPlan ,
+                                                           :DockerImagePlan ,
+                                                           :GetWebsiteRAWPlan ,
+                                                           :JupyterNotebookPlan ,
+                                                           :LibrariesPlan ,
+                                                           :MongoDBPlan ,
+                                                           :RunPlan ,
+                                                           :TransformToJSONPlan ;
+            :specifiedForSystem :Vasqua .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,14 @@
+@prefix : <http://w3id.org/wellfort/ns/dpv#> .
+@prefix rdt: <https://github.com/End-to-end-provenance/ExtendedProvJson/blob/master/JSON-format.md#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix id: <http://w3id.org/wellfort/id/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+id:agent-rdt-3.3 a prov:Agent;
+  rdt:tool.name "rdt";
+  rdt:tool.version "3.3";
+  rdt:json.version "2.3" .
+
+id:study-6b3a3b69-2356-402c-89d9-43d3f7c6b17c prov:hadMember <http://w3id.org/wellfort/id/6b3a3b69-2356-402c-89d9-43d3f7c6b17c/entity-rdt%3Aenvironment> .

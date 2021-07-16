@@ -32,6 +32,8 @@ public class controller implements Icontroller {
 
     @Override
     public void init() {
+        this.auditCollector.init(config.ep_plan, config.defaultGraph);
+        this.auditCollector.init(config.sao, config.defaultGraph);
         this.auditCollector.init(config.provenance, config.defaultGraph);
     }
 

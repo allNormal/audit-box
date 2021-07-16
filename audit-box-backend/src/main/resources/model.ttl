@@ -20,6 +20,22 @@
 :contain rdf:type owl:ObjectProperty .
 
 
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasAuditabilityTrace
+:hasAuditabilityTrace rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasElement
+:hasElement rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasWorkflow
+:hasWorkflow rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#hasWorkflowElement
+:hasWorkflowElement rdf:type owl:ObjectProperty .
+
+
 ###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#partOf
 :partOf rdf:type owl:ObjectProperty .
 
@@ -183,7 +199,7 @@
 
 ###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#GetWebsiteRAW
 :GetWebsiteRAW rdf:type owl:Class ;
-               rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :response ;
                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -218,7 +234,7 @@
 
 ###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Libraries
 :Libraries rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Bundle> ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hash ;
                              owl:allValuesFrom xsd:string
@@ -253,7 +269,7 @@
 
 ###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Run
 :Run rdf:type owl:Class ;
-     rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+     rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ,
                      [ rdf:type owl:Restriction ;
                        owl:onProperty :basedOfSnapshotFrom ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -263,7 +279,7 @@
 
 ###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#TransformToJSON
 :TransformToJSON rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.w3.org/ns/prov#Acitivity> ,
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :transformedData ;
                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -271,16 +287,117 @@
                                  ] .
 
 
-###  http://www.w3.org/ns/prov#Acitivity
-<http://www.w3.org/ns/prov#Acitivity> rdf:type owl:Class .
+###  http://www.w3.org/2002/07/owl#System
+owl:System rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
 
 
+###  http://www.w3.org/ns/prov#Bundle
+<http://www.w3.org/ns/prov#Bundle> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#ExecutionTraceBundle
+<https://w3id.org/ep-plan#ExecutionTraceBundle> rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Plan
+<https://w3id.org/ep-plan#Plan> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSON
+:AirportJSON rdf:type owl:NamedIndividual ,
+                      :AirportJSON .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAW
+:AirportRAW rdf:type owl:NamedIndividual ,
+                     :AirportRAW ;
+            :transform :Transform_to_JSON .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerContainer
+:DockerContainer rdf:type owl:NamedIndividual ,
+                          :DockerContainer ;
+                 :contain :JupyterNotebook ;
+                 :runTimeEnvironment :Run .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#DockerImage
+:DockerImage rdf:type owl:NamedIndividual ,
+                      :DockerImage .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Get_Website_RAW
+:Get_Website_RAW rdf:type owl:NamedIndividual ,
+                          :GetWebsiteRAW ;
+                 :response :AirportRAW .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#JupyterNotebook
+:JupyterNotebook rdf:type owl:NamedIndividual ,
+                          :JNB ;
+                 :sendRequest :Get_Website_RAW ;
+                 :transformFunction :Transform_to_JSON ;
+                 :use :Libraries .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Libraries
+:Libraries rdf:type owl:NamedIndividual ,
+                    :Libraries .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDB
+:MongoDB rdf:type owl:NamedIndividual ,
+                  :MongoDB ;
+         :sendResponse :Get_Website_RAW .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Plan
+:Plan rdf:type owl:NamedIndividual ,
+               <https://w3id.org/ep-plan#Plan> ;
+      :hasWorkflowElement :AirportJSON ,
+                          :AirportRAW ,
+                          :DockerContainer ,
+                          :DockerImage ,
+                          :Get_Website_RAW ,
+                          :JupyterNotebook ,
+                          :Libraries ,
+                          :MongoDB ,
+                          :Run ,
+                          :Transform_to_JSON .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Run
+:Run rdf:type owl:NamedIndividual ,
+              :Run ;
+     :basedOfSnapshotFrom :DockerImage .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Transform_to_JSON
+:Transform_to_JSON rdf:type owl:NamedIndividual ,
+                            :TransformToJSON ;
+                   :transformedData :AirportJSON .
+
+
+###  http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#Vasqua
+:Vasqua rdf:type owl:NamedIndividual ,
+                 owl:System ;
+        :hasWorkflow :Plan .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
