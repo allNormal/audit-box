@@ -42,6 +42,7 @@ public class Service {
         getAllAudit();
         doLoad();
         initCleanRepo();
+        validate();
     }
 
 
@@ -95,9 +96,9 @@ public class Service {
     }
 
     private void validate() {
-        get("/api/validate", (request, response) -> {
-            log.info("Validating data with uuid " + request.headers());
-            return "hello!";
+        post("/api/validate", (request, response) -> {
+            controller.validate(request);
+            return "{status: 'validated'}";
         });
     }
 

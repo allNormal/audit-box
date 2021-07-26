@@ -1,11 +1,15 @@
 package org.semsys.controller.impl;
 
+
+import com.google.gson.Gson;
+import org.json.JSONObject;
 import org.semsys.Service;
+import org.semsys.config.Config;
 import org.semsys.controller.Icontroller;
 import org.semsys.engine.Collector;
+import org.semsys.entity.JSONProvenance;
 import org.semsys.entity.Provenance;
 import org.semsys.exception.NoFileParserException;
-import org.semsys.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
@@ -51,7 +55,17 @@ public class controller implements Icontroller {
             if(request.contentType().contains("xml")) {
                 auditCollector.storeDataInRepo(request.body(), config.xmlReceiver, "xml", config.defaultGraph, config.shapes);
             } else if(request.contentType().contains("json")) {
-                auditCollector.storeDataInRepo(request.body(), config.jsonReceiver, "json", config.defaultGraph, config.shapes);
+                /*
+                JSONObject jsonObject = new JSONObject(request.body());
+                JsonObject jsonObject = new JsonParser().parse(request.body()).getAsJsonObject();
+                System.out.println("def");
+                String airportUUID = jsonObject.get("airport").getAsJsonObject().;
+
+                 */
+                Gson gson = new Gson();
+                JSONProvenance provenance = gson.fromJson(request.body(), JSONProvenance.class);
+                if(provenance.getAirport() != null) auditCollector.storeDataInRepo(request.body(), config.jsonReceiver, "json", config.defaultGraph + "-" + provenance.getAirport().getUuid(), config.shapes);
+                else auditCollector.storeDataInRepo(request.body(), config.jsonReceiver, "json", config.defaultGraph, config.shapes);
             } else if(request.contentType().contains("csv")) {
                 auditCollector.storeDataInRepo(request.body(), config.csvReceiver, "csv", config.defaultGraph, config.shapes);
             } else {
@@ -93,6 +107,16 @@ public class controller implements Icontroller {
         Map<String, Provenance> allAudit = auditCollector.getAllProvenence();
         log.info("success retrieving all audit data from repository");
         return allAudit;
+    }
+
+    @Override
+    public void validate(Request request) {
+        JSONObject jsonObject = new JSONObject(request.body());
+        String uuid = jsonObject.getString("uuid");
+        this.auditCollector.init(config.ep_plan, config.defaultGraph + "-" + uuid);
+        this.auditCollector.init(config.sao, config.defaultGraph + "-" + uuid);
+        this.auditCollector.init(config.provenance, config.defaultGraph + "-" + uuid);
+        this.auditCollector.validate(uuid);
     }
 
 }

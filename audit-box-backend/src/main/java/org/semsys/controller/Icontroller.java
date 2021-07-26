@@ -18,4 +18,6 @@ public interface Icontroller {
 
     Map<String, Provenance> getAllAudit(Response response);
 
+    void validate(Request request);
+
 }

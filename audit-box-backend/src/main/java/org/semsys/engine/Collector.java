@@ -3,7 +3,6 @@ package org.semsys.engine;
 import org.apache.commons.io.IOUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.semsys.Service;
@@ -14,11 +13,8 @@ import org.semsys.fileparser.JSONFileParser;
 import org.semsys.fileparser.XMLFileParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.topbraid.shacl.validation.ValidationUtil;
-import org.topbraid.shacl.vocabulary.SH;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.nio.file.Path;
@@ -96,18 +92,25 @@ public class Collector {
         } else {
             throw new NoFileParserException("file parser for " + serialization + " not yet implemented");
         }
-
         fileParser.parse(inputIS,rmlIS, fos, new HashMap<>());
+        /*
         FileInputStream tempIs = new FileInputStream(temp);
         Model data = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(data, tempIs, Lang.TURTLE);
+        RDFDataMgr.read(data,tempIs , Lang.TURTLE);
 
         Resource validation = ValidationUtil.validateModel(data, shapes, false);
         boolean reportStatus = validation.getProperty(SH.conforms).getBoolean();
         if(!reportStatus) {
             log.warn("validation error " + validation.getModel().toString());
         }
+
+         */
+
         return temp;
+    }
+
+    public void validate(String uuid) {
+        this.endpointV2.validate(uuid);
     }
 
     /**

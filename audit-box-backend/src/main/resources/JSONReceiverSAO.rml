@@ -43,8 +43,15 @@
                             rr:class    p-plan:Bundle ] ;
 
     rr:predicateObjectMap [ rr:predicate :timeStamp ;
-                            rr:objectMap [ rml:reference "time" ;
-                                           rr:datatype   xsd:dateTime ; ] ; ] ;
+                            rr:objectMap [ rml:reference "executionDate" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :uuid ;
+                            rr:objectMap [ rml:reference "airport.uuid" ;
+                                           rr:datatype   xsd:string ; ] ; ] ;
+
+    rr:predicateObjectMap [ rr:predicate :status ;
+                            rr:objectMap [ rr:constant "Not Validated" ; ] ] ;
 
     rr:predicateObjectMap [ rr:predicate ep-plan:hasTraceElement ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/DockerImage-{initializationHash}"; ] ; ] ;
@@ -232,7 +239,7 @@
                                         rr:objectMap [ rml:reference "libraryHash" ;
                                                        rr:datatype   xsd:string ; ] ; ] ;
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToVariable ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToVariable ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#LibrariesPlan"; ] ; ] ;
 
     rr:predicateObjectMap [ rr:predicate ep-plan:isTraceOfElement ;
@@ -267,7 +274,7 @@
                                                        rr:datatype   xsd:datetime ; ] ; ] ;
 
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToStep ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToStep ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#GetWebsiteRAWPlan"; ] ; ] ;
 
     rr:predicateObjectMap [ rr:predicate rdfs:label;
@@ -302,7 +309,7 @@
                                             rr:objectMap [ rml:reference "airport.airportName" ;
                                                            rr:datatype   xsd:string ; ] ; ] ;
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToVariable ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToVariable ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportRAWPlan"; ] ; ] ;
 
     rr:predicateObjectMap [ rr:predicate rdfs:label;
@@ -324,7 +331,7 @@
                                 rr:class    :MongoDBProvenance ] ;
 
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToVariable ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToVariable ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#MongoDBPlan"; ] ; ] ;
 
     rr:predicateObjectMap [ rr:predicate rdfs:label;
@@ -350,7 +357,7 @@
                           rr:objectMap [ rml:reference "uuid" ;
                             rr:datatype   xsd:string ; ] ; ] ;
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToStep ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToStep ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#TransformToJSONPlan"; ] ; ] ;
 
     rr:predicateObjectMap [ rr:predicate rdfs:label;
@@ -384,7 +391,7 @@
                                             rr:objectMap [ rml:reference "airport.airportName" ;
                                                            rr:datatype   xsd:string ; ] ; ] ;
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToVariable ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToVariable ;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#AirportJSONPlan"; ] ; ] ;
 
 
@@ -406,7 +413,7 @@
     rr:subjectMap         [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/sendJSON-{uuid}" ;
                                 rr:class    prov:Activity ] ;
 
-    rr:predicateObjectMap [ rr:predicate :correspondsToActivity ;
+    rr:predicateObjectMap [ rr:predicate ep-plan:correspondsToStep;
                             rr:objectMap [ rr:template "http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#SendJSON"; ] ; ] ;
 
 

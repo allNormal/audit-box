@@ -1,5 +1,10 @@
 package org.semsys.engine;
 
+import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.eclipse.rdf4j.RDF4JException;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -10,24 +15,30 @@ import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.manager.RemoteRepositoryManager;
 import org.eclipse.rdf4j.repository.manager.RepositoryManager;
 import org.eclipse.rdf4j.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFHandler;
+import org.eclipse.rdf4j.rio.Rio;
 import org.semsys.Service;
 import org.semsys.entity.Agent;
 import org.semsys.entity.Entity;
 import org.semsys.entity.Provenance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.topbraid.shacl.validation.ValidationUtil;
+import org.topbraid.shacl.vocabulary.SH;
 
-import java.io.File;
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.apache.jena.ontology.OntModelSpec.OWL_MEM;
 
 public class EndpointV2 {
 
     private RepositoryManager manager;
     private Repository repository;
     private static final Logger log = LoggerFactory.getLogger(Service.class);
-
+    private final String graphName = "http://vasqua.org/provenance/test";
 
     public EndpointV2() {
     }
@@ -148,6 +159,82 @@ public class EndpointV2 {
         } catch (RDF4JException e) {
             log.error(e.getMessage());
         }
+    }
+
+    public void validate(String uuid) {
+        RepositoryConnection con = this.repository.getConnection();
+        IRI context = this.repository.getValueFactory().createIRI(this.graphName + "-" + uuid);
+        File temp = null;
+        InputStream shaclIS = Collector.class.getClassLoader().getResourceAsStream(Service.config.shapes);
+        Model shapes = ModelFactory.createDefaultModel();
+        RDFDataMgr.read(shapes, shaclIS, Lang.TURTLE);
+
+        try {
+            temp = File.createTempFile(Service.config.tempFile, Service.config.tempFileSuffix);
+            FileOutputStream fos = new FileOutputStream(temp);
+            RDFHandler writer = Rio.createWriter(RDFFormat.TURTLE, fos);
+            con.export(writer, context);
+
+            FileInputStream tempIs = new FileInputStream(temp);
+            Model data = ModelFactory.createDefaultModel();
+            RDFDataMgr.read(data,tempIs , Lang.TURTLE);
+
+            Resource validation = ValidationUtil.validateModel(data, shapes, false);
+            boolean reportStatus = validation.getProperty(SH.conforms).getBoolean();
+            StmtIterator iterator = data.listStatements();
+            RDFNode rdfNode = null;
+            Property property = null;
+            while (iterator.hasNext()) {
+                Statement statement = iterator.nextStatement();
+                if (statement.getPredicate().toString().equals("http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#status")) {
+                    rdfNode = statement.getObject();
+                    property = statement.getPredicate();
+                    con.prepareUpdate(
+                            "PREFIX : <http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#>" + "\n"
+                            + "DELETE DATA { \n"
+                            + "<http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/ExecutionTraceBundle-" + uuid + "> :status  'Not Validated' . \n"
+                            + "}"
+                    ).execute();
+                    break;
+                }
+            }
+            tempIs = new FileInputStream(temp);
+            OntModel model = ModelFactory.createOntologyModel(OWL_MEM);
+            RDFDataMgr.read(model,tempIs , Lang.TURTLE);
+            //DatatypeProperty status = model.getDatatypeProperty("http://www.semanticweb.org/43676/ontologies/2021/3/vasqua_auditbox#status");
+            Individual bundle = model.getIndividual("http://www.semanticweb.org/43676/ontologies/2021/2/Vasqua-Auditbox/ExecutionTraceBundle-" + uuid);
+
+            if(!reportStatus) {
+                bundle.removeProperty(property, rdfNode);
+                bundle.addProperty(property, " Not Complete");
+            } else {
+                bundle.removeProperty(property, rdfNode);
+                bundle.addProperty(property, " Complete");
+            }
+            File file = File.createTempFile(Service.config.tempFile, Service.config.tempFileSuffix);
+            FileOutputStream out = new FileOutputStream(file);
+            model.write(out, "TTL");
+            storeDataInRepo(file, this.graphName + "-" + uuid);
+            file.deleteOnExit();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            con.close();
+        }
+        /*
+        RepositoryConnection con = this.repository.getConnection();
+        FileInputStream tempIs = new FileInputStream(temp);
+        Model data = ModelFactory.createDefaultModel();
+        RDFDataMgr.read(data, , Lang.TURTLE);
+
+        Resource validation = ValidationUtil.validateModel(data, shapes, false);
+        boolean reportStatus = validation.getProperty(SH.conforms).getBoolean();
+        if(!reportStatus) {
+            log.warn("validation error " + validation.getModel().toString());
+        }
+
+         */
     }
 
     public Map<String, Provenance> getAllProvenences() {
